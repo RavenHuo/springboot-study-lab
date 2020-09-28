@@ -11,8 +11,8 @@
 	<groupId>com.raven.version</groupId>
 	<artifactId>raven-version-control</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>raven-version</name>
-	<description>raven-version</description>
+	<name>raven-version-control</name>
+	<description>raven-version-control</description>
 
 	<properties>
 		<java.version>1.8</java.version>
