@@ -1,4 +1,4 @@
-## 基于SpringBoot的学习demo，欢迎新想法。
+## 基于SpringBoot的技术demo，欢迎新想法。
 
 - api版本控制，支持url前缀版本匹配。版本降级匹配。
 
