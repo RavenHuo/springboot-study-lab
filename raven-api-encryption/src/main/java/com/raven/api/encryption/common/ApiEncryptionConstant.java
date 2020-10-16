@@ -6,5 +6,24 @@ package com.raven.api.encryption.common;
  * @create: 2020-10-13 09:17
  */
 public class ApiEncryptionConstant {
-    public static final String API_ENCRYPTION_SWITCH = "api.encryption.switch";
+
+    public static final String SPRING_API_ENCRYPTION = "spring.api.encryption";
+
+    /**
+     * 开关
+     */
+    public static final String SPRING_API_ENCRYPTION_SWITCH = SPRING_API_ENCRYPTION + ".switch";
+
+    /**
+     * 公钥
+     */
+    public static final String SPRING_API_ENCRYPTION_PUB_KEY = SPRING_API_ENCRYPTION + ".pub.key";
+
+    /**
+     * 私钥
+     */
+    public static final String SPRING_API_ENCRYPTION_PRI_KEY = SPRING_API_ENCRYPTION + ".pri.key";
+
+
+    public static final String RSA_ALGORITHM = "RSA";
 }

@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Bean;
  * @author: huorw
  * @create: 2020-10-12 18:59
  */
-@ConditionalOnProperty(value = ApiEncryptionConstant.API_ENCRYPTION_SWITCH, matchIfMissing = true)
+@ConditionalOnProperty(value = ApiEncryptionConstant.SPRING_API_ENCRYPTION_SWITCH, matchIfMissing = true)
 public class ApiEncryptionAutoConfiguration {
 
     @Bean

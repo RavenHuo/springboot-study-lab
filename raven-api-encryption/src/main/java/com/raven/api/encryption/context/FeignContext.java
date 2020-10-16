@@ -5,5 +5,5 @@ package com.raven.api.encryption.context;
  * @author: huorw
  * @create: 2020-10-14 21:33
  */
-public class FeignCnotext {
+public class FeignContext {
 }
