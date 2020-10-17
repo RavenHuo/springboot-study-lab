@@ -99,8 +99,8 @@ public class AESUtils {
     }
 
     public static void main(String[] args) throws Exception{
-        String pubKey = UUID.randomUUID().toString().replaceAll("-","");
-        String content = "hello world";
+        String pubKey = "qwertyuioo--=098=--==0bgsdbgh";
+        String content = "18";
         System.out.println("加密前  content=    "+content);
         String encryptionStr = encryption(content, pubKey);
         System.out.println("加密后  content=    "+encryptionStr);

@@ -1,4 +1,4 @@
-package com.raven.api.encryption.util;
+package com.raven.api.encryption.data;
 
 import lombok.Data;
 

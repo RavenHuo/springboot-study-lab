@@ -1,6 +1,7 @@
 package com.raven.api.encryption.util;
 
 import com.raven.api.encryption.common.ApiEncryptionConstant;
+import com.raven.api.encryption.data.RsaEncryptionKey;
 import lombok.extern.slf4j.Slf4j;
 import javax.crypto.Cipher;
 import java.nio.charset.StandardCharsets;
@@ -94,7 +95,10 @@ public class RSAUtils {
 
     public static void main(String[] args) throws Exception {
         RsaEncryptionKey key = genKeyPair();
-        String content = "hello world";
+        String content = "{\n" +
+                "\"name\":\"raven\",\n" +
+                "\"age\":18\n" +
+                "}";
         System.out.println(" 加密前=   " + content);
         String encryptionStr = encryption(content, key.getPublicKey());
         System.out.println(" 加密后=   " + encryptionStr);
