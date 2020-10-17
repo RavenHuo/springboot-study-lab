@@ -19,10 +19,6 @@ import java.io.IOException;
 @Slf4j
 public class ApiEncryptionFilter implements Filter {
 
-    private static final String POST_REQUEST_METHOD = "POST";
-
-    private static final String PUT_REQUEST_METHOD = "PUT";
-
     /**
      * 公钥
      */

@@ -17,13 +17,15 @@ public class ApiEncryptionConstant {
     /**
      * 公钥
      */
-    public static final String SPRING_API_ENCRYPTION_PUB_KEY = SPRING_API_ENCRYPTION + ".pub.key";
+    public static final String SPRING_API_ENCRYPTION_PUB_KEY = SPRING_API_ENCRYPTION + ".pubKey";
 
     /**
      * 私钥
      */
-    public static final String SPRING_API_ENCRYPTION_PRI_KEY = SPRING_API_ENCRYPTION + ".pri.key";
+    public static final String SPRING_API_ENCRYPTION_PRI_KEY = SPRING_API_ENCRYPTION + ".priKey";
 
 
     public static final String RSA_ALGORITHM = "RSA";
+
+    public static final String AES_ALGORITHM = "AES";
 }

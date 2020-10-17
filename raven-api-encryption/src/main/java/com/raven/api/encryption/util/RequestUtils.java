@@ -25,7 +25,7 @@ public class RequestUtils {
             InputStream in = request.getInputStream();
             return StreamUtils.copyToString(in, StandardCharsets.UTF_8);
         }catch (Exception e) {
-            log.info("获取请求体内容 出错 e{}",e);
+            log.info("获取请求体内容 出错 e={}",e);
             return null;
         }
     }
