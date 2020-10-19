@@ -1,4 +1,4 @@
-package com.raven.api.encryption.filter;
+package com.raven.api.encryption.wrapper;
 
 import com.raven.api.encryption.util.AESUtils;
 import com.raven.api.encryption.util.RequestUtils;
@@ -21,7 +21,7 @@ import java.util.HashMap;
  * @create: 2020-10-15 15:29
  */
 @Slf4j
-public class RequestParamWrapper extends HttpServletRequestWrapper {
+public class AesRequestParamWrapper extends HttpServletRequestWrapper {
 
     private static final String POST_REQUEST_METHOD = "POST";
     private static final String PUT_REQUEST_METHOD = "PUT";
@@ -32,7 +32,7 @@ public class RequestParamWrapper extends HttpServletRequestWrapper {
 
     private byte[] body;
 
-    public RequestParamWrapper(HttpServletRequest request, String pubKey) {
+    public AesRequestParamWrapper(HttpServletRequest request, String pubKey) {
         super(request);
         publicKey = pubKey;
         parameters = new HashMap<>();

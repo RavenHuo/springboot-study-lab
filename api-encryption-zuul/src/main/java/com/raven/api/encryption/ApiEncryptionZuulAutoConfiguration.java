@@ -1,7 +1,7 @@
 package com.raven.api.encryption;
 
 import com.raven.api.encryption.common.ApiEncryptionConstant;
-import com.raven.api.encryption.zuul.ApiEncryptionZuulFilter;
+import com.raven.api.encryption.zuul.rsa.ApiEncryptionZuulPreFilter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
@@ -27,8 +27,8 @@ public class ApiEncryptionZuulAutoConfiguration {
     }
 
     @Bean
-    public ApiEncryptionZuulFilter feignInterceptor() {
-        return new ApiEncryptionZuulFilter();
+    public ApiEncryptionZuulPreFilter apiEncryptionZuulPreFilter() {
+        return new ApiEncryptionZuulPreFilter();
     }
 
 }

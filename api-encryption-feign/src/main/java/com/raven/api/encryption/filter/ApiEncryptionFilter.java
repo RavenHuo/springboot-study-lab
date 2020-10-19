@@ -2,6 +2,7 @@ package com.raven.api.encryption.filter;
 
 import com.raven.api.encryption.common.ApiEncryptionConstant;
 import com.raven.api.encryption.controller.Routes;
+import com.raven.api.encryption.wrapper.AesRequestParamWrapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.catalina.connector.RequestFacade;
 import org.springframework.beans.factory.annotation.Value;
@@ -33,8 +34,8 @@ public class ApiEncryptionFilter implements Filter {
         if (Routes.ENCRYPTION_EXCLUDE_URL.contains(uri)) {
             filterChain.doFilter(servletRequest, servletResponse);
         }else {
-            RequestParamWrapper requestParamWrapper = new RequestParamWrapper((HttpServletRequest) servletRequest, pubKey);
-            filterChain.doFilter(requestParamWrapper, servletResponse);
+            AesRequestParamWrapper aesRequestParamWrapper = new AesRequestParamWrapper((HttpServletRequest) servletRequest, pubKey);
+            filterChain.doFilter(aesRequestParamWrapper, servletResponse);
         }
     }
 }
