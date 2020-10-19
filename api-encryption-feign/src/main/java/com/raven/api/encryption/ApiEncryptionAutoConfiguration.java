@@ -1,5 +1,4 @@
 package com.raven.api.encryption;
-
 import com.raven.api.encryption.common.ApiEncryptionConstant;
 import com.raven.api.encryption.feign.FeignInterceptor;
 import com.raven.api.encryption.filter.ApiEncryptionFilter;
@@ -27,10 +26,10 @@ public class ApiEncryptionAutoConfiguration {
         log.info("ApiEncryptionAutoConfiguration init------------------------");
     }
 
-//    @Bean
-//    public FeignInterceptor feignInterceptor() {
-//        return new FeignInterceptor();
-//    }
+    @Bean
+    public FeignInterceptor feignInterceptor() {
+        return new FeignInterceptor();
+    }
 
     @Bean
     public ApiEncryptionFilter apiEncryptionFilter() {

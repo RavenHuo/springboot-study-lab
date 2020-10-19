@@ -3,18 +3,12 @@ package com.raven.api.encryption.feign;
 import com.raven.api.encryption.common.ApiEncryptionConstant;
 import com.raven.api.encryption.controller.Routes;
 import com.raven.api.encryption.util.AESUtils;
-import com.raven.api.encryption.util.RequestUtils;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
-import feign.Util;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
 
-import javax.servlet.http.HttpServletRequest;
-import java.io.InputStream;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
