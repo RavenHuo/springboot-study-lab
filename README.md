@@ -6,11 +6,8 @@
 - (2)接口版本降级匹配。
 
 ### 二、基于SpringCloud fegin及hystrix 的数据加密校验插件
-[raven-api-encryption](https://github.com/RavenHuo/SpringAttempt/tree/master/raven-api-encryption/)
+[raven-api-encryption](https://github.com/RavenHuo/SpringAttempt/tree/master/api-encryption-feign/)
 - （1）微服务间通过feign（RestTemplate）相互调用的数据加密
 - （2）接口api对称加密与对称解密
 - （3）接口api数据解密校验
-
-RSA：公钥加密，私钥解密
-
-feign接口：非对称加密
+feign接口：对称加密
