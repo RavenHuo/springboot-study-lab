@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.raven.springcloud.zuul.dynamic.routing</groupId>
-    <artifactId>zuul-dynamic-douting</artifactId>
+    <artifactId>zuul-dynamic-routing</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>zuul-dynamic-douting</name>
-    <description>zuul-dynamic-douting</description>
+    <name>zuul-dynamic-routing</name>
+    <description>zuul-dynamic-routing</description>
 
     <properties>
         <java.version>1.8</java.version>
