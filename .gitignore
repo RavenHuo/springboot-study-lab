@@ -35,3 +35,6 @@ Thumbs.db
 /.classpath
 /.project
 .idea/
+*/mvnw.cmd
+*/mvnw
+*/.mvn
