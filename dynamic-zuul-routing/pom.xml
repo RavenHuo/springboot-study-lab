@@ -8,11 +8,11 @@
         <version>2.3.5.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.raven.springcloud.zuul.dynamic.routing</groupId>
-    <artifactId>zuul-dynamic-routing</artifactId>
+    <groupId>com.raven.springcloud.dynamic.zuul.routing</groupId>
+    <artifactId>dynamic-zuul-routing</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>zuul-dynamic-routing</name>
-    <description>zuul-dynamic-routing</description>
+    <name>dynamic-zuul-routing</name>
+    <description>dynamic-zuul-routing</description>
 
     <properties>
         <java.version>1.8</java.version>

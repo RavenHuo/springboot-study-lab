@@ -1,13 +1,13 @@
-package com.raven.springcloud.zuul.dynamic.routing;
+package com.raven.springcloud.dynamic.zuul.routing;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ZuulDynamicDoutingApplication {
+public class DynamicZuulRoutingApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ZuulDynamicDoutingApplication.class, args);
+        SpringApplication.run(DynamicZuulRoutingApplication.class, args);
     }
 
 }

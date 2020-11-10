@@ -1,0 +1,20 @@
+server:
+  port: 8089
+  tomcat:
+    uri-encoding: UTF-8
+
+
+spring:
+  application:
+    name: dynamic-zuul-routing
+
+#eureka
+eureka:
+  client:
+    registerWithEureka: true #表示是否将自己注册到Eureka Server上，默认为true
+    fetchRegistry: true       #表示是否从Eureka Server上获取注册信息，默认为true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    healthcheck:
+      enable: true
+
