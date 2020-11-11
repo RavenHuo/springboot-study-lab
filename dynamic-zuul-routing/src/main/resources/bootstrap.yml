@@ -1,0 +1,30 @@
+server:
+  port: 8089
+  tomcat:
+    uri-encoding: UTF-8
+
+#eureka
+eureka:
+  client:
+    registerWithEureka: true #表示是否将自己注册到Eureka Server上，默认为true
+    fetchRegistry: true       #表示是否从Eureka Server上获取注册信息，默认为true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    healthcheck:
+      enable: true
+  instance:
+    prefer-ip-address: true
+    non-secure-port-enabled: true
+    secure-port-enabled: false
+    secure-port: 443
+    ip-address: 47.107.190.146
+    instance-id: ${eureka.instance.ip-address}:${server.port}
+    metadataMap:
+      version: release
+      group: pld-gray-group
+      clientIp: ${spring.cloud.client.ip-address}
+
+spring:
+  application:
+    name: dynamic-zuul-routing
+  #Name 表示文件名
