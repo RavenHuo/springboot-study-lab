@@ -15,4 +15,5 @@ feign接口：对称加密
 
 ### 三、 springcloud-动态路由配置
 [zuul-dynamic-routing](https://github.com/RavenHuo/SpringAttempt/tree/master/zuul-dynamic-routing/)
- 动态配置zuul的api 映射 避免每次新增服务都需要重启zuul
+ 动态zuul路由配置，将路由配置写入数据库，30秒刷新一次路由配置 
+ 避免每次新增服务都需要重启zuul
