@@ -25,4 +25,7 @@ public class ZuulRoutingEntity extends IdEntity{
 
     @Column(name = "serviceId", columnDefinition = "varchar(512) comment 'serviceId'")
     private String serviceId;
+
+    @Column(name = "routeId", columnDefinition = "varchar(512) comment 'routeId'")
+    private String routeId;
 }
