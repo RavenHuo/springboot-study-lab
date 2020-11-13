@@ -2,16 +2,11 @@ package com.raven.springcloud.dynamic.zuul.routing.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.netflix.zuul.RoutesRefreshedEvent;
-import org.springframework.cloud.netflix.zuul.filters.ZuulProperties;
 import org.springframework.context.ApplicationEventPublisher;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.annotation.PostConstruct;
-import java.util.List;
 
 /**
  * @description:
@@ -28,6 +23,10 @@ public class DynamicRoutingRefresh {
     @Autowired
     private DynamicRouteLocator routeLocator;
 
+    /**
+     * RoutesRefreshedEvent 注册了事件
+     * 每30秒刷新一次路由
+     */
     @PostConstruct
     public void refreshRouting() {
         log.info("refreshRouting ------------------");
