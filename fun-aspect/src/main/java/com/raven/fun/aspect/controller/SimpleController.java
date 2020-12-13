@@ -24,4 +24,8 @@ public class SimpleController {
         simpleService.log();
     }
 
+    @GetMapping("/optimisticHandler")
+    public void optimisticHandler() {
+        simpleService.optimisticHandler();
+    }
 }

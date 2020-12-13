@@ -8,4 +8,6 @@ package com.raven.fun.aspect.service;
 public interface ISimpleService {
 
     void log();
+
+    void optimisticHandler();
 }
