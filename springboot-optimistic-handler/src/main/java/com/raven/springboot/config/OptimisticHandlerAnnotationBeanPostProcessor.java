@@ -3,6 +3,7 @@ package com.raven.springboot.config;
 import com.raven.springboot.config.advice.ProxyOptimisticHandlerAnnotationAdvisor;
 import org.springframework.aop.framework.autoproxy.AbstractBeanFactoryAwareAdvisingPostProcessor;
 import org.springframework.beans.factory.BeanFactory;
+import org.springframework.context.ApplicationContext;
 import org.springframework.lang.Nullable;
 import org.springframework.util.Assert;
 
@@ -17,8 +18,15 @@ import java.util.Set;
  */
 public class OptimisticHandlerAnnotationBeanPostProcessor extends AbstractBeanFactoryAwareAdvisingPostProcessor {
 
+
+    private ApplicationContext applicationContext;
+
+    public OptimisticHandlerAnnotationBeanPostProcessor(ApplicationContext applicationContext) {
+        this.applicationContext = applicationContext;
+    }
     @Nullable
     private Class<? extends Annotation> annotationType;
+
 
     public void setAnnotationType(Class<? extends Annotation> asyncAnnotationType) {
         Assert.notNull(asyncAnnotationType, "'optimisticHandlerAnnotationType' must not be null");
@@ -33,7 +41,7 @@ public class OptimisticHandlerAnnotationBeanPostProcessor extends AbstractBeanFa
         if (this.annotationType != null) {
             annotationTypes.add(annotationType);
         }
-        ProxyOptimisticHandlerAnnotationAdvisor advisor = new ProxyOptimisticHandlerAnnotationAdvisor(annotationTypes);
+        ProxyOptimisticHandlerAnnotationAdvisor advisor = new ProxyOptimisticHandlerAnnotationAdvisor(annotationTypes, applicationContext);
         advisor.setBeanFactory(beanFactory);
         this.advisor = advisor;
     }

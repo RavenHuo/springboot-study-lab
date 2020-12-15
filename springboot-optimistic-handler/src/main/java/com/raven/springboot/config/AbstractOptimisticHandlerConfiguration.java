@@ -2,6 +2,7 @@ package com.raven.springboot.config;
 
 import com.raven.springboot.annotation.EnableOptimisticHandler;
 import com.raven.springboot.annotation.OptimisticHandler;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportAware;
 import org.springframework.core.annotation.AnnotationAttributes;

@@ -24,7 +24,7 @@ public class SimpleServiceImpl implements ISimpleService {
     }
 
     @Override
-    @OptimisticHandler
+    @OptimisticHandler(handlerMethod = "simpleOptimisticHandler#handler")
     public void optimisticHandler() {
         throw new OptimisticLockException();
     }

@@ -8,7 +8,7 @@ import java.lang.annotation.*;
 @Documented
 public @interface OptimisticHandler {
 
-    String exceptionMethod() default "";
+    String handlerMethod() default "";
 
     String exceptionMsg() default "乐观锁异常--------------";
 }

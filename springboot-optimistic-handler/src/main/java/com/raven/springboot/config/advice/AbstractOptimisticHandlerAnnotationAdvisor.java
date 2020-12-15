@@ -18,7 +18,6 @@ public abstract class AbstractOptimisticHandlerAnnotationAdvisor implements Poin
 
     public AbstractOptimisticHandlerAnnotationAdvisor(Set<Class<? extends Annotation>> annotationType) {
         this.buildPointcut(annotationType);
-        this.buildAdvice();
     }
 
     protected Advice advice;

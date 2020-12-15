@@ -1,6 +1,11 @@
 package com.raven.springboot.config;
 
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanInitializationException;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Role;
@@ -17,12 +22,17 @@ import java.lang.annotation.Annotation;
 @Role(BeanDefinition.ROLE_INFRASTRUCTURE)
 public class ProxyOptimisticHandlerConfiguration extends AbstractOptimisticHandlerConfiguration{
 
+    private final ApplicationContext applicationContext;
+
+    public ProxyOptimisticHandlerConfiguration(ApplicationContext applicationContext) {
+        this.applicationContext = applicationContext;
+    }
 
     @Bean(name = "ProxyOptimisticHandlerConfiguration")
     @Role(BeanDefinition.ROLE_INFRASTRUCTURE)
     public OptimisticHandlerAnnotationBeanPostProcessor simpleLogAdvisor() {
         Assert.notNull(this.enableOptimisticHandler, "@EnableOptimisticHandler annotation metadata was not injected");
-        OptimisticHandlerAnnotationBeanPostProcessor bpp = new OptimisticHandlerAnnotationBeanPostProcessor();
+        OptimisticHandlerAnnotationBeanPostProcessor bpp = new OptimisticHandlerAnnotationBeanPostProcessor(applicationContext);
         Class<? extends Annotation> customAnnotation = this.enableOptimisticHandler.getClass("annotation");
 
         bpp.setAnnotationType(customAnnotation);
@@ -30,4 +40,5 @@ public class ProxyOptimisticHandlerConfiguration extends AbstractOptimisticHandl
         bpp.setOrder(this.enableOptimisticHandler.<Integer>getNumber("order"));
         return bpp;
     }
+
 }

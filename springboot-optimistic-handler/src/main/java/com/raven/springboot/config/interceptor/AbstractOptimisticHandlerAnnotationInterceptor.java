@@ -46,6 +46,6 @@ public abstract class AbstractOptimisticHandlerAnnotationInterceptor implements 
      * 此处实现处理 乐观锁方法
      * @param userDeclaredMethod
      */
-    protected abstract void optimisticHandler(Method userDeclaredMethod);
+    protected abstract void optimisticHandler(Method userDeclaredMethod) throws Throwable;
 
 }

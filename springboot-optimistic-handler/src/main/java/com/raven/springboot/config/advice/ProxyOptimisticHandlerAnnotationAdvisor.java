@@ -4,6 +4,7 @@ import com.raven.springboot.config.interceptor.ProxyOptimisticHandlerAnnotationI
 import org.springframework.aop.Pointcut;
 import org.springframework.aop.support.ComposablePointcut;
 import org.springframework.aop.support.annotation.AnnotationMatchingPointcut;
+import org.springframework.context.ApplicationContext;
 
 import java.lang.annotation.Annotation;
 import java.util.Set;
@@ -15,8 +16,14 @@ import java.util.Set;
  */
 public class ProxyOptimisticHandlerAnnotationAdvisor extends AbstractOptimisticHandlerAnnotationAdvisor {
 
-    public ProxyOptimisticHandlerAnnotationAdvisor(Set<Class<? extends Annotation>> annotationType) {
+
+    private ApplicationContext applicationContext;
+
+
+    public ProxyOptimisticHandlerAnnotationAdvisor(Set<Class<? extends Annotation>> annotationType, ApplicationContext applicationContext) {
         super(annotationType);
+        this.applicationContext = applicationContext;
+        this.buildAdvice();
     }
 
     @Override
@@ -26,7 +33,7 @@ public class ProxyOptimisticHandlerAnnotationAdvisor extends AbstractOptimisticH
 
     @Override
     protected void buildAdvice(){
-        this.advice = new ProxyOptimisticHandlerAnnotationInterceptor();
+        this.advice = new ProxyOptimisticHandlerAnnotationInterceptor(this.applicationContext);
     }
 
     /**
